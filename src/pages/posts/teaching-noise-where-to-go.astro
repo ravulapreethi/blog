@@ -2,14 +2,14 @@
 import Base from "../../layouts/Base.astro";
 import Giscus from "../../components/Giscus.astro";
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Base
   title="Teaching Noise Where to Go — Preethi Ravula"
   description="Flow matching, moving dots, and the mathematics of generation."
 >
-  <a class="back-link" href={`${base}`}>← All notes</a>
+  <a class="back-link" href={`${base}/`}>← All notes</a>
 
   <article>
     <span class="coming-soon">Coming soon</span>
