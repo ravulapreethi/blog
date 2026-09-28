@@ -1,0 +1,54 @@
+---
+import Base from "../../layouts/Base.astro";
+import Giscus from "../../components/Giscus.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Base
+  title="Teaching Noise Where to Go — Preethi Ravula"
+  description="Flow matching, moving dots, and the mathematics of generation."
+>
+  <a class="back-link" href={`${base}`}>← All notes</a>
+
+  <article>
+    <span class="coming-soon">Coming soon</span>
+    <h1 class="post-title">Teaching Noise Where to Go</h1>
+    <p class="post-subtitle">
+      Flow matching, moving dots, and the mathematics of generation
+    </p>
+
+    <div class="post-body">
+      <p>
+        An image. A voice clip. A molecule. Very different outputs — but
+        underneath them is the same problem: how do you get from random noise
+        to something that belongs in the real world?
+      </p>
+      <p>
+        Flow matching learns the journey, not just the destination. It learns
+        a vector field: a direction of travel for every point, at every moment.
+      </p>
+      <p>
+        Take image generation for example, You start with noise and need to
+        turn it into something recognizable. With Flow matching, the question
+        it asks is: which way should each point move?
+      </p>
+      <p>
+        Picture a cloud of dots drifting, bending, rearranging itself into a
+        spiral. The model learns the motion that gets it there not just the
+        final shape.
+      </p>
+      <p>
+        Stringing those directions together and you get a path. Follow that
+        path with an ordinary differential equation, and noise becomes
+        structure.
+      </p>
+    </div>
+
+    <div class="closing-callout">
+      <p>Coming next: the math, the model, and the moving dots.</p>
+    </div>
+  </article>
+
+  <Giscus />
+</Base>
