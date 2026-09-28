@@ -1,0 +1,166 @@
+---
+import Base from "../layouts/Base.astro";
+import Giscus from "../components/Giscus.astro";
+
+const base = import.meta.env.BASE_URL;
+const postUrl = `${base}posts/teaching-noise-where-to-go/`;
+---
+
+<Base title="Preethi Ravula — Thinking that runs.">
+  <!-- 1. Hero -->
+  <section class="hero" aria-label="Introduction">
+    <h1>Thinking that runs.</h1>
+    <p class="standfirst">
+      Published when there is a problem worth unpacking—without forcing every
+      question into false certainty.
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 2. Preview teaser -->
+  <section aria-label="Latest note">
+    <a class="teaser-card" href="#full-preview">
+      <div class="teaser-label">Preview the first note ↓</div>
+      <h3>Teaching Noise Where to Go</h3>
+      <p class="teaser-sub">
+        Flow matching, moving dots, and the mathematics of generation
+      </p>
+    </a>
+  </section>
+
+  <!-- 3. Condensed author bio -->
+  <section class="bio" aria-label="About the author">
+    <img src={`${base}profile.jpg`} alt="Portrait of Preethi Ravula" />
+    <div>
+      <p class="bio-line">Preethi Ravula</p>
+      <p>Builder across enterprise agent systems.</p>
+      <p class="bio-meta">
+        Ph.D. &amp; M.S., Mechanical Engineering — University of Maryland,
+        College Park (2016–2021)<br />
+        B.Tech., Mechanical Engineering — IIT Kharagpur (2009–2013)
+      </p>
+      <p class="bio-meta">
+        Interests: agentic AI systems, high performance computing, causal
+        inference, and models of markets and the physical world.<br />
+        <a href="https://www.researchgate.net/profile/Preethi-Ravula">ResearchGate</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. Technical notes in progress -->
+  <section aria-label="Technical notes in progress">
+    <p class="eyebrow">Technical notes in progress</p>
+    <p>
+      Each note takes one question seriously: a position, the surrounding
+      terrain, and a working example. Nothing here is a finished paper —
+      these are applied technical essays, written to be inspected and run.
+    </p>
+  </section>
+
+  <!-- 5. Full flow-matching preview -->
+  <section id="full-preview" aria-label="Featured note">
+    <span class="coming-soon">Coming soon</span>
+    <h2 class="post-title">Teaching Noise Where to Go</h2>
+    <p class="post-subtitle">
+      Flow matching, moving dots, and the mathematics of generation
+    </p>
+    <div class="post-body">
+      <p>
+        An image. A voice clip. A molecule. Very different outputs — but
+        underneath them is the same problem: how do you get from random noise
+        to something that belongs in the real world?
+      </p>
+      <p>
+        Flow matching learns the journey, not just the destination. It learns
+        a vector field: a direction of travel for every point, at every moment.
+      </p>
+      <p>
+        Take image generation for example, You start with noise and need to
+        turn it into something recognizable. With Flow matching, the question
+        it asks is: which way should each point move?
+      </p>
+      <p>
+        Picture a cloud of dots drifting, bending, rearranging itself into a
+        spiral. The model learns the motion that gets it there not just the
+        final shape.
+      </p>
+      <p>
+        Stringing those directions together and you get a path. Follow that
+        path with an ordinary differential equation, and noise becomes
+        structure.
+      </p>
+    </div>
+    <div class="closing-callout">
+      <p>Coming next: the math, the model, and the moving dots.</p>
+    </div>
+    <p style="margin-top: 1.5rem;">
+      <a class="back-link" href={postUrl} style="margin-bottom: 0;">
+        Read and discuss this note →
+      </a>
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 6. How each post works -->
+  <section class="method-lines" aria-label="How each post works">
+    <p class="eyebrow">How each post works</p>
+    <p>Take a position. Map the terrain. Make it run.</p>
+    <p class="method-sub">
+      Clear claims, visible sources, and reproducible examples.
+    </p>
+  </section>
+
+  <!-- 7. Lines of inquiry -->
+  <section aria-label="Lines of inquiry">
+    <p class="eyebrow">Lines of inquiry</p>
+    <p>
+      These threads grow out of work I've done, keep returning to and
+      questions I'm still excited to pursue.
+    </p>
+    <p class="bridge">
+      <strong>Different domains, one discipline:</strong> making assumptions
+      visible, reasoning under uncertainty, and building models that can be
+      tested.
+    </p>
+    <ul class="topics">
+      <li>
+        <div class="topic-name">AI systems &amp; GenAI agents</div>
+        <p class="topic-desc">
+          How systems are built, evaluated, deployed, and made reliable.
+        </p>
+      </li>
+      <li>
+        <div class="topic-name">Finance &amp; world markets</div>
+        <p class="topic-desc">Understood through models.</p>
+      </li>
+      <li>
+        <div class="topic-name">HPC &amp; scientific computing</div>
+        <p class="topic-desc">
+          High performance computing for simulation and science.
+        </p>
+      </li>
+      <li>
+        <div class="topic-name">Causal AI</div>
+        <p class="topic-desc">
+          Interventions, causes, counterfactuals, and decisions — not merely
+          prediction.
+        </p>
+      </li>
+      <li>
+        <div class="topic-name field-notes">Field Notes</div>
+        <p class="topic-desc">
+          Books, art, travel — personal, lower priority, kept separate.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 8. Closing -->
+  <p class="closing-line">
+    Follow the argument. Inspect the assumptions. Run the example.
+  </p>
+
+  <Giscus />
+</Base>
