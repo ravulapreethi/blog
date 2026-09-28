@@ -1,8 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const base = import.meta.env.BASE_URL;
-const postUrl = `${base}posts/teaching-noise-where-to-go/`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const postUrl = `${base}/posts/teaching-noise-where-to-go/`;
 ---
 
 <Base title="Preethi Ravula — Thinking that runs.">
@@ -13,7 +13,6 @@ const postUrl = `${base}posts/teaching-noise-where-to-go/`;
       ></span
     >
     <nav aria-label="On this page">
-      <span class="nav-label">On this page</span>
       <a href="#about">About</a>
       <a href="#notes">Notes</a>
       <a href="#method">Method</a>
@@ -25,47 +24,45 @@ const postUrl = `${base}posts/teaching-noise-where-to-go/`;
   <!-- Hero -->
   <section class="hero" aria-label="Introduction">
     <h1>Thinking that <em>runs.</em></h1>
-    <p>
+    <p class="hero-note">
       Working notes on AI systems, markets, scientific computing, and causal
       reasoning—from a claim, to the evidence, to an executable example.
     </p>
-    <p>
-      Published when there is a problem worth unpacking—without forcing every
-      question into false certainty.
-    </p>
   </section>
+  <p class="hero-sub">
+    Published when there is a problem worth unpacking—without forcing every
+    question into false certainty.
+  </p>
 
-  <!-- Preview card -->
-  <section aria-label="Latest note">
-    <a class="teaser-card" href={postUrl}>
-      <div class="teaser-label">Preview the first note ↓</div>
-      <h3>Teaching Noise Where to Go</h3>
-      <p class="teaser-sub">
-        Flow matching, moving dots, and the mathematics of generation
-      </p>
-      <p class="teaser-meta">Post 01 · Coming soon</p>
-    </a>
-  </section>
+  <!-- Preview row -->
+  <a class="teaser-row" href={postUrl} aria-label="Preview the first note">
+    <span class="teaser-label">Preview the first note ↓</span>
+    <span class="teaser-main">
+      <strong>Teaching Noise Where to Go</strong>
+      <span>Flow matching, moving dots, and the mathematics of generation</span>
+    </span>
+    <span class="teaser-meta">Post 01 · Coming soon</span>
+  </a>
 
   <hr class="divider" />
 
   <!-- About -->
   <section class="bio" id="about" aria-label="About the author">
-    <img src={`${base}profile.jpg`} alt="Portrait of Preethi Ravula" />
+    <img src={`${base}/profile.jpg`} alt="Portrait of Preethi Ravula" />
     <div>
       <h2>Preethi Ravula</h2>
-      <p class="bio-loc">Mountain View, CA</p>
-      <p>Builder across enterprise agent systems.</p>
-      <p>
-        Applied AI researcher across evaluation, causal inference, and high
-        performance computing — Ph.D. &amp; M.S. in Mechanical Engineering
-        (University of Maryland, College Park), B.Tech. (IIT Kharagpur) —
-        focused on making machine intelligence rigorous and useful.
+      <p class="bio-line1">
+        Applied AI Researcher · Builder of enterprise agentic systems ·
+        Modernizing applications and making machine intelligence rigorous and
+        useful
       </p>
-      <p>
-        <a class="ext-link" href="https://www.researchgate.net/profile/Preethi-Ravula"
-          >ResearchGate ↗</a
-        >
+      <p class="bio-line2">
+        Causal inference . Stochastic modeling . numerical simulation .
+        high-performance computing.
+      </p>
+      <p class="bio-edu">
+        PhD &amp; ms - university of Maryland, college park<br />
+        B.tech, Mech. Eng. - IIT Kharagpur
       </p>
     </div>
   </section>
@@ -73,66 +70,59 @@ const postUrl = `${base}posts/teaching-noise-where-to-go/`;
   <hr class="divider" />
 
   <!-- Technical notes -->
-  <section id="notes" aria-label="Technical notes in progress">
-    <div class="section-head">
-      <h2>Technical notes in progress.</h2>
-      <span class="index-tag">Post 01</span>
+  <section id="notes" aria-label="Technical notes">
+    <div class="note-grid">
+      <div>
+        <span class="coming-soon">Coming soon</span>
+        <p class="tag-label">Generative modeling</p>
+      </div>
+      <article>
+        <h2 class="post-title">Teaching Noise Where to Go</h2>
+        <p class="post-subtitle">
+          Flow matching, moving dots, and the mathematics of generation
+        </p>
+        <div class="post-body">
+          <p>
+            An image. A voice clip. A molecule. Very different outputs — but
+            underneath them is the same problem: how do you get from random
+            noise to something that belongs in the real world?
+          </p>
+          <p>
+            Flow matching learns the journey, not just the destination. It
+            learns a vector field: a direction of travel for every point, at
+            every moment.
+          </p>
+          <p>
+            Take image generation for example, You start with noise and need
+            to turn it into something recognizable. With Flow matching, the
+            question it asks is: which way should each point move?
+          </p>
+          <p>
+            Picture a cloud of dots drifting, bending, rearranging itself
+            into a spiral. The model learns the motion that gets it there not
+            just the final shape.
+          </p>
+          <p>
+            Stringing those directions together and you get a path. Follow
+            that path with an ordinary differential equation, and noise
+            becomes structure.
+          </p>
+        </div>
+        <div class="coming-next">
+          <p>Coming next: the math, the model, and the moving dots.</p>
+        </div>
+        <p class="discuss-link">
+          <a class="back-link" href={postUrl}> Read and discuss this note → </a>
+        </p>
+      </article>
     </div>
-    <p>
-      Applied technical essays, learning notes, experiments, and model
-      investigations—shared before they become polished posts.
-    </p>
-
-    <article id="flow-preview" style="margin-top: 2.5rem;">
-      <span class="coming-soon">Coming soon</span>
-      <p class="tag-label">Generative modeling</p>
-      <h3 class="post-title">Teaching Noise Where to Go</h3>
-      <p class="post-subtitle">
-        Flow matching, moving dots, and the mathematics of generation
-      </p>
-      <div class="post-body">
-        <p>
-          An image. A voice clip. A molecule. Very different outputs — but
-          underneath them is the same problem: how do you get from random
-          noise to something that belongs in the real world?
-        </p>
-        <p>
-          Flow matching learns the journey, not just the destination. It
-          learns a vector field: a direction of travel for every point, at
-          every moment.
-        </p>
-        <p>
-          Take image generation for example, You start with noise and need to
-          turn it into something recognizable. With Flow matching, the
-          question it asks is: which way should each point move?
-        </p>
-        <p>
-          Picture a cloud of dots drifting, bending, rearranging itself into
-          a spiral. The model learns the motion that gets it there not just
-          the final shape.
-        </p>
-        <p>
-          Stringing those directions together and you get a path. Follow that
-          path with an ordinary differential equation, and noise becomes
-          structure.
-        </p>
-      </div>
-      <div class="closing-callout">
-        <p>Coming next: the math, the model, and the moving dots.</p>
-      </div>
-      <p style="margin-top: 1.5rem;">
-        <a class="back-link" href={postUrl} style="margin-bottom: 0;">
-          Read and discuss this note →
-        </a>
-      </p>
-    </article>
   </section>
 
   <hr class="divider" />
 
   <!-- Method -->
   <section class="method-lines" id="method" aria-label="How each post works">
-    <p class="method-kicker">HOW EACH POST WORKS</p>
+    <p class="kicker">HOW EACH POST WORKS</p>
     <h2>Take a position. Map the terrain. Make it run.</h2>
     <p class="method-sub">
       Clear claims, visible sources, and reproducible examples.
@@ -143,71 +133,63 @@ const postUrl = `${base}posts/teaching-noise-where-to-go/`;
 
   <!-- Topics -->
   <section id="topics" aria-label="Topics">
+    <h2 class="topics-title">Lines of inquiry.</h2>
+    <p class="topics-intro">
+      These threads grow out of work I've done, keep returning to and
+      questions I'm still excited to pursue.
+    </p>
     <p class="topics-eyebrow"><span class="accent">Core</span> → Field notes</p>
-    <h2 class="topics-head">Core research threads</h2>
-    <div class="topics-intro">
-      <p>
-        These threads grow out of work I've done, keep returning to and
-        questions I'm still excited to pursue.
-      </p>
-      <p>
-        <span class="lead">Different domains, one discipline:</span> making
-        assumptions visible, reasoning under uncertainty, and building models
-        that can be tested.
-      </p>
-    </div>
-    <ol class="topics">
+    <p class="topics-statement">
+      <span class="accent">Different domains, one discipline:</span> making
+      assumptions visible, reasoning under uncertainty, and building models
+      that can be tested.
+    </p>
+    <hr class="topics-statement-rule" />
+    <p class="kicker">CORE RESEARCH THREADS</p>
+    <ol class="topics-grid">
       <li>
         <span class="topic-num">01</span>
-        <div>
-          <p class="topic-name">AI systems in production</p>
-          <p class="topic-desc">
-            The gap between the demo and the deployment. What changes when
-            models meet users, incentives, and operational reality.
-          </p>
-        </div>
+        <p class="topic-name">AI &amp; agentic systems</p>
+        <p class="topic-desc">
+          How AI systems are built, evaluated, deployed, and made
+          reliable—from new architectures and releases to the engineering
+          beyond the demo.
+        </p>
       </li>
       <li>
         <span class="topic-num">02</span>
-        <div>
-          <p class="topic-name">Markets &amp; incentives</p>
-          <p class="topic-desc">
-            How mechanism design, information asymmetry, and human behavior
-            reshape what technology actually does.
-          </p>
-        </div>
+        <p class="topic-name">Markets through models</p>
+        <p class="topic-desc">
+          World markets treated as interacting systems: what models reveal,
+          what they hide, and how to reason under uncertainty.
+        </p>
       </li>
       <li>
         <span class="topic-num">03</span>
-        <div>
-          <p class="topic-name">Scientific computing</p>
-          <p class="topic-desc">
-            High performance computing, numerical methods, and the craft of
-            turning equations into executable insight.
-          </p>
-        </div>
+        <p class="topic-name">Scientific computing &amp; HPC</p>
+        <p class="topic-desc">
+          Numerical ideas, performance, parallelism, and the practical
+          machinery behind compute-intensive research.
+        </p>
       </li>
       <li>
         <span class="topic-num">04</span>
-        <div>
-          <p class="topic-name">Causality &amp; reasoning</p>
-          <p class="topic-desc">
-            From correlation to causation: identifying what actually moves the
-            needle and saying so precisely.
-          </p>
-        </div>
+        <p class="topic-name">Causal AI</p>
+        <p class="topic-desc">
+          How to reason about interventions, causes, counterfactuals, and
+          decisions—not just predictions.
+        </p>
       </li>
+    </ol>
+    <p class="kicker">FIELD NOTES</p>
+    <ol class="topics-grid">
       <li>
         <span class="topic-num">05</span>
-        <div>
-          <p class="topic-name">
-            Books, art &amp; travel <span class="field-tag">Field notes</span>
-          </p>
-          <p class="topic-desc">
-            Occasional observations from outside the technical
-            stack—kept because different disciplines sharpen the questions.
-          </p>
-        </div>
+        <p class="topic-name">Books, art &amp; travel</p>
+        <p class="topic-desc">
+          Occasional observations from outside the technical stack—kept
+          because different disciplines sharpen the questions.
+        </p>
       </li>
     </ol>
   </section>
@@ -216,44 +198,49 @@ const postUrl = `${base}posts/teaching-noise-where-to-go/`;
 
   <!-- Publication note -->
   <section class="pub-note" id="issue-00" aria-label="Publication note">
-    <div class="pub-meta">
-      <div><span class="accent">Issue 00</span></div>
-      <div>September 2026</div>
-      <div>Publication note</div>
-    </div>
-    <h2>A place to think in public</h2>
-    <p class="lede">
-      This notebook starts with a simple constraint: no topic is finished at
-      the headline.
-    </p>
-    <details class="launch-note">
-      <summary
-        ><span class="plus">+</span>
-        <span class="label-text">Read the launch note</span></summary
-      >
-      <div class="launch-body">
-        <p>
-          Most new ideas arrive already compressed: a release announcement, a
-          benchmark, a market move, a striking result. Compression is useful
-          for discovery, but not for understanding. The work begins when we
-          ask what the claim depends on, how it connects to the wider field,
-          and whether we can make the mechanism visible.
-        </p>
-        <p>
-          That is the purpose of this notebook. Each post will begin with a
-          point of view, then widen into a learning map, and finally narrow
-          again into an executable example. The code is not decoration; it is
-          where assumptions become inspectable.
-        </p>
-        <p>
-          The center of gravity will be AI and agentic systems, world markets
-          understood through models, scientific computing, and causal AI.
-          Books, art, and travel will appear more occasionally—as another way
-          to notice patterns, challenge categories, and return with better
-          questions.
-        </p>
+    <div class="pub-grid">
+      <div class="pub-meta">
+        <div><span class="accent">Issue 00</span></div>
+        <div>September 2026</div>
+        <div>Publication note</div>
       </div>
-    </details>
+      <div>
+        <h2>A place to think in public</h2>
+        <p class="lede">
+          This notebook starts with a simple constraint: no topic is finished
+          at the headline.
+        </p>
+        <details class="launch-note">
+          <summary
+            ><span class="plus">+</span>
+            <span class="label-text">Read the launch note</span></summary
+          >
+          <div class="launch-body">
+            <p>
+              Most new ideas arrive already compressed: a release
+              announcement, a benchmark, a market move, a striking result.
+              Compression is useful for discovery, but not for understanding.
+              The work begins when we ask what the claim depends on, how it
+              connects to the wider field, and whether we can make the
+              mechanism visible.
+            </p>
+            <p>
+              That is the purpose of this notebook. Each post will begin with
+              a point of view, then widen into a learning map, and finally
+              narrow again into an executable example. The code is not
+              decoration; it is where assumptions become inspectable.
+            </p>
+            <p>
+              The center of gravity will be AI and agentic systems, world
+              markets understood through models, scientific computing, and
+              causal AI. Books, art, and travel will appear more
+              occasionally—as another way to notice patterns, challenge
+              categories, and return with better questions.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
   </section>
 
   <hr class="divider" />
