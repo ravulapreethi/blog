@@ -194,6 +194,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     border: 1px solid var(--rule);
   }
   .bio h2 { font-size: 2rem; margin: 0 0 1rem; }
+  .bio h2 .name-link {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.75rem;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .bio h2 .name-link:hover { text-decoration: underline; }
   .bio .bio-line1 { margin: 0 0 1rem; font-size: 1.1rem; color: var(--heading); }
   .bio .bio-line2 { margin: 0 0 1.25rem; color: var(--muted); }
   .bio .bio-edu {
