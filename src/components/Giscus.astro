@@ -1,0 +1,59 @@
+---
+import { giscusConfig } from "../giscus";
+---
+
+{
+  giscusConfig.enabled ? (
+    <section class="comments" aria-label="Comments">
+      <h2>Discussion</h2>
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={giscusConfig.repo}
+        data-repo-id={giscusConfig.repoId}
+        data-category={giscusConfig.category}
+        data-category-id={giscusConfig.categoryId}
+        data-mapping={giscusConfig.mapping}
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async
+      />
+    </section>
+  ) : (
+    <section class="comments comments--pending" aria-label="Comments">
+      <h2>Discussion</h2>
+      <p>
+        Comments open here once the site is connected to GitHub Discussions.
+        See <code>src/giscus.ts</code> for the one-time setup.
+      </p>
+    </section>
+  )
+}
+
+<style>
+  .comments {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .comments h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .comments--pending p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .comments--pending code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85em;
+    background: var(--wash);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+  }
+</style>
