@@ -15,20 +15,20 @@
 
 export const giscusConfig = {
   // e.g. "preethi-ravula/blog"
-  repo: "YOUR_USERNAME/YOUR_REPO" as `${string}/${string}`,
+  repo: "ravulapreethi/blog" as `${string}/${string}`,
 
   // From https://giscus.app after entering your repo — e.g. "R_kgDOG..."
-  repoId: "YOUR_REPO_ID",
+  repoId: "R_kgDOUvT9Lw",
 
   // Discussion category name — e.g. "Announcements"
   category: "Announcements",
 
   // From https://giscus.app — e.g. "DIC_kwDOG..."
-  categoryId: "YOUR_CATEGORY_ID",
+  categoryId: "DIC_kwDOUvT9L84DGjjt",
 
   // Mapping strategy for which discussion backs each page
   mapping: "pathname" as const,
 
   // Set to true once the four values above are filled in
-  enabled: false,
+  enabled: true,
 };
